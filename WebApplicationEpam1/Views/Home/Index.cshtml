@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Main";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<h1 class="blog-headline">Articles about healthy diet</h1>
+@foreach (Article article in ViewData["Articles"] as List<Article>)
+{
+    <div class="article-block">
+        <h2>@article.Name</h2>
+        <p>@article.Text</p>
+        <div class="date-block">
+            <span>@article._DateTime.ToString("yyyy-MM-dd hh:mm")</span>
+        </div>
+    </div>
+    <hr class="article-end-line" />
+    <br />
+}
